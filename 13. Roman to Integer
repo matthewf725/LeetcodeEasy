@@ -1,0 +1,31 @@
+class Solution(object):
+    def romanToInt(self, s):
+        sum = 0
+        for num in s:
+            if num == 'I':
+                sum += 1
+            elif num == 'V':
+                sum += 5
+            elif num == 'X':
+                sum += 10
+            elif num == 'L':
+                sum += 50
+            elif num == 'C':
+                sum += 100
+            elif num == 'D':
+                sum += 500
+            elif num == 'M':
+                sum += 1000
+        if s.find('IV') != -1:
+            sum -= 2
+        if s.find('IX') != -1:
+            sum -= 2   
+        if s.find('XL') != -1:
+            sum -= 20     
+        if s.find('XC') != -1:
+            sum -= 20
+        if s.find('CD') != -1:
+            sum -= 200
+        if s.find('CM') != -1:
+            sum -= 200
+        return sum            
